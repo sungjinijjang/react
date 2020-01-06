@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import QuizBoard from './QuizBoard'
 import QuizInput from './QuizInput'
 
-const QuizComponent = () => {
+const QuizComponent = ({arr}) => {
 
     const [idx, setIdx] = useState(0)
     const [end, setEnd] = useState(0)
@@ -26,27 +26,25 @@ const QuizComponent = () => {
 
     }
 
-    //퀴즈 데이터(퀴즈와 정답-상태유지? 변수선언 유지?)
-    // index -> state로 유지
-    const arr = [
-                    {title:"Quiz1", answer:"1"},
-                    {title:"Quiz2", answer:"2"},
-                    {title:"Quiz3", answer:"3"},
-                    {title:"Quiz4", answer:"4"},
-                    {title:"Quiz5", answer:"5"},
-                ]
+const comp = () => {
+    let result = null;
+
+    if(end == 1){
+        result = <h1>The End</h1>
+    }else if(end == -1){
+        result = <h1>You Are a Fool</h1>
+    }else{
+        result = <>
+        <QuizBoard title={arr[idx].title}></QuizBoard>
+            <QuizInput fn={checkAnswer}></QuizInput>
+            </>
+    }
+    return result;
+}
 
     return(
         <div>
-            {/* 동적으로 component를 change */}
-            {/* 표현식 */}
-            {end ? <h1>true</h1> : 
-            <>
-            <QuizBoard title={arr[idx].title}></QuizBoard>
-            <QuizInput fn={checkAnswer}></QuizInput>
-            </>
-            }
-            
+            {comp()}
         </div>
     )
 }
