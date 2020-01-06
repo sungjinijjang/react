@@ -18,6 +18,7 @@ const QuizComponent = ({arr}) => {
                 setEnd(1) // end값에 따라 랜더링 값이 달라져야 함???
                 return
             }
+            
             //index 번호 증가
             setIdx(idx + 1) // idx++ (x)
         }else{

@@ -5,6 +5,9 @@ import Hello from './components/Hello';
 import Hello2 from './components/Hello2';
 import HelloBox from './components/HelloBox';
 import QuizComponent from './components/quiz/QuizComponent';
+import ExInput from './components/refs/ExInput';
+import CountHookComponent from './components/day1/NewCountHookComponent';
+import NewCountHookComponent from './components/day1/NewCountHookComponent';
 
 
 
@@ -33,7 +36,13 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+
+        <ExInput></ExInput>
+        <ExInput></ExInput>
+
         <QuizComponent arr={arr1}></QuizComponent>
+
+        <NewCountHookComponent></NewCountHookComponent>       
         
         {/* <Hello></Hello>
         <Hello2></Hello2>
